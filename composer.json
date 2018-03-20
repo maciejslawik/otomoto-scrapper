@@ -1,0 +1,12 @@
+{
+    "require": {
+        "psr/cache": "^1.0",
+        "react/event-loop": "^0.4.3",
+        "react/http-client": "^0.5.8",
+        "fabpot/goutte": "^3.2",
+        "symfony/console": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {"MSlwk\\Otomoto\\": "src"}
+    }
+}
