@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+/**
+ * File: otomoto
+ *
+ * @author      Maciej Sławik <maciekslawik@gmail.com>
+ * Github:      https://github.com/maciejslawik
+ */
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use MSlwk\Otomoto\Cli\Command\ListManufacturersCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application('Otomoto scrapper', '1.0.0');
+$app->add(new ListManufacturersCommand());
+$app->run();
