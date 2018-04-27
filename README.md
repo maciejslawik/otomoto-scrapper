@@ -31,11 +31,34 @@ Then, inside your container
 composer install
 ```
 
+## Usage
+
+The CLI application is available using the executable
+```
+bin/otomoto
+```
+
+### Available commands
+* app:manufacturer-list - lists all available car manufacturers
+    ```
+    bin/otomoto app:manufacturer-list 
+    ```
+
+* app:manufacturer-models manufacturer_name - lists all available models for chosen manufacturer
+    ```
+    bin/otomoto app:manufacturer-models "Alfa Romeo"
+    ```
+    
+### Caching
+Models and manufacturers are cached inside ```cache/``` directory. To clear cache
+simply remove/empty the directory.    
+        
 ## Built With
 
 * Symfony Console
 * Guzzle
 * ReactPHP
+* Stash caching
 
 ## Authors
 
