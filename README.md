@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/maciejslawik/otomoto-scrapper.svg?branch=master)](https://travis-ci.org/maciejslawik/otomoto-scrapper)
+[![Latest Stable Version](https://poser.pugx.org/mslwk/otomoto-scrapper/v/stable)](https://packagist.org/packages/mslwk/otomoto-scrapper)
+[![License](https://poser.pugx.org/mslwk/otomoto-scrapper/license)](https://packagist.org/packages/mslwk/otomoto-scrapper)
+
 # Otomoto scrapper
 
 This CLI app scraps [Otomoto](https://otomoto.pl/) to provide you
@@ -31,11 +35,34 @@ Then, inside your container
 composer install
 ```
 
+## Usage
+
+The CLI application is available using the executable
+```
+bin/otomoto
+```
+
+### Available commands
+* app:manufacturer-list - lists all available car manufacturers
+    ```
+    bin/otomoto app:manufacturer-list 
+    ```
+
+* app:manufacturer-models manufacturer_name - lists all available models for chosen manufacturer
+    ```
+    bin/otomoto app:manufacturer-models "Alfa Romeo"
+    ```
+    
+### Caching
+Models and manufacturers are cached inside ```cache/``` directory. To clear cache
+simply remove/empty the directory.    
+        
 ## Built With
 
 * Symfony Console
 * Guzzle
 * ReactPHP
+* Stash caching
 
 ## Authors
 

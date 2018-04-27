@@ -1,0 +1,5 @@
+.idea
+vendor
+cache
+coverage
+clover.xml
