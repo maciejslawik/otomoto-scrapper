@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/maciejslawik/otomoto-scrapper.svg?branch=master)](https://travis-ci.org/maciejslawik/otomoto-scrapper)
+[![Coverage Status](https://coveralls.io/repos/github/maciejslawik/otomoto-scrapper/badge.svg?branch=master)](https://coveralls.io/github/maciejslawik/otomoto-scrapper?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/mslwk/otomoto-scrapper/v/stable)](https://packagist.org/packages/mslwk/otomoto-scrapper)
 [![License](https://poser.pugx.org/mslwk/otomoto-scrapper/license)](https://packagist.org/packages/mslwk/otomoto-scrapper)
 

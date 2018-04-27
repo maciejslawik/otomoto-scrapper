@@ -2,4 +2,4 @@
 vendor
 cache
 coverage
-clover.xml
+build/
