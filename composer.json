@@ -1,4 +1,15 @@
 {
+    "name": "mslwk/otomoto-scrapper",
+    "description": "PHP-CLI app for otomoto.pl scrapping",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Maciej Sławik",
+            "email": "maciekslawik@gmail.com"
+        }
+    ],
     "require": {
         "php": "^7.2",
         "psr/cache": "^1.0",

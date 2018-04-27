@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/maciejslawik/otomoto-scrapper.svg?branch=master)](https://travis-ci.org/maciejslawik/otomoto-scrapper)
+[![Latest Stable Version](https://poser.pugx.org/mslwk/otomoto-scrapper/v/stable)](https://packagist.org/packages/mslwk/otomoto-scrapper)
+[![License](https://poser.pugx.org/mslwk/otomoto-scrapper/license)](https://packagist.org/packages/mslwk/otomoto-scrapper)
+
 # Otomoto scrapper
 
 This CLI app scraps [Otomoto](https://otomoto.pl/) to provide you
