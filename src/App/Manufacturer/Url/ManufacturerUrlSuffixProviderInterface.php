@@ -6,19 +6,19 @@
  * Github:      https://github.com/maciejslawik
  */
 
-namespace MSlwk\Otomoto\App\Model\Url;
+namespace MSlwk\Otomoto\App\Manufacturer\Url;
 
 use MSlwk\Otomoto\App\Manufacturer\Data\ManufacturerDTOInterface;
 
 /**
  * Interface ManufacturerUrlSuffixProviderInterface
- * @package MSlwk\Otomoto\App\Model\Url
+ * @package MSlwk\Otomoto\App\Manufacturer\Url
  */
 interface ManufacturerUrlSuffixProviderInterface
 {
     /**
      * @param ManufacturerDTOInterface $manufacturerDTO
-     * @return mixed
+     * @return string
      */
-    public function getUrlSuffix(ManufacturerDTOInterface $manufacturerDTO);
+    public function getUrlSuffix(ManufacturerDTOInterface $manufacturerDTO): string;
 }

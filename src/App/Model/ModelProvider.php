@@ -12,7 +12,7 @@ use MSlwk\Otomoto\App\Base\UrlPoviderInterface;
 use MSlwk\Otomoto\App\Manufacturer\Data\ManufacturerDTOInterface;
 use MSlwk\Otomoto\App\Model\Data\ModelDTOArray;
 use MSlwk\Otomoto\App\Model\Scrapper\ModelHtmlScrapperInterface;
-use MSlwk\Otomoto\App\Model\Url\ManufacturerUrlSuffixProviderInterface;
+use MSlwk\Otomoto\App\Manufacturer\Url\ManufacturerUrlSuffixProviderInterface;
 use MSlwk\Otomoto\App\Model\Validator\ModelsScrappedValidatorInterface;
 use MSlwk\Otomoto\Middleware\Webpage\Data\UrlDTO;
 use MSlwk\Otomoto\Middleware\Webpage\Data\UrlDTOArray;

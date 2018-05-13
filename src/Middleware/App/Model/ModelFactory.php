@@ -11,7 +11,7 @@ namespace MSlwk\Otomoto\Middleware\App\Model;
 use MSlwk\Otomoto\App\Base\UrlProvider;
 use MSlwk\Otomoto\App\Model\ModelProvider;
 use MSlwk\Otomoto\App\Model\Scrapper\ModelHtmlScrapper;
-use MSlwk\Otomoto\App\Model\Url\ManufacturerUrlSuffixProvider;
+use MSlwk\Otomoto\App\Manufacturer\Url\ManufacturerUrlSuffixProvider;
 use MSlwk\Otomoto\App\Model\Validator\ModelsScrappedValidator;
 use MSlwk\Otomoto\Middleware\Cache\Adapter\CacheAdapterInterface;
 use MSlwk\Otomoto\Middleware\Cache\Factory\File\FileCacheAdapterFactory;

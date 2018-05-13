@@ -12,6 +12,7 @@ use MSlwk\Otomoto\App\Model\Data\ModelDTO;
 use MSlwk\Otomoto\App\Model\Data\ModelDTOArray;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\MockObject\MockObject;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use MSlwk\Otomoto\Middleware\App\Model\ModelFactory;
@@ -110,6 +111,27 @@ class ListModelsCommandTest extends TestCase
     public function testCommandHasCorrectDescription()
     {
         $this->assertEquals(ListModelsCommand::COMMAND_DESC, $this->command->getDescription());
+    }
+
+    /**
+     * @test
+     */
+    public function testCommandHasCorrectArguments()
+    {
+        $commandDefinition = $this->command->getDefinition();
+
+        $expectedCount = 1;
+        $expectedType = InputArgument::class;
+        $expectedDescription = ListModelsCommand::MANUFACTURER_ARG_DESC;
+        $this->assertEquals($expectedCount, $commandDefinition->getArgumentCount());
+        $this->assertInstanceOf(
+            $expectedType,
+            $commandDefinition->getArgument(ListModelsCommand::MANUFACTURER_ARG_NAME)
+        );
+        $this->assertEquals(
+            $expectedDescription,
+            $commandDefinition->getArgument(ListModelsCommand::MANUFACTURER_ARG_NAME)->getDescription()
+        );
     }
 
     /**

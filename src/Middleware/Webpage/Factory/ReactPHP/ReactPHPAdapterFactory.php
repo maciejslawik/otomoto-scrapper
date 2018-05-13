@@ -9,6 +9,7 @@
 namespace MSlwk\Otomoto\Middleware\Webpage\Factory\ReactPHP;
 
 use MSlwk\Otomoto\Middleware\Webpage\Adapter\GETHandlerInterface;
+use MSlwk\Otomoto\Middleware\Webpage\Adapter\ReactPHP\ClientFactory;
 use MSlwk\Otomoto\Middleware\Webpage\Adapter\ReactPHP\ReactPHPRequestAdapter;
 use MSlwk\Otomoto\Middleware\Webpage\Factory\GETHandlerAdapterFactoryInterface;
 use React\EventLoop\Factory;
@@ -24,6 +25,6 @@ class ReactPHPAdapterFactory implements GETHandlerAdapterFactoryInterface
      */
     public function create(): GETHandlerInterface
     {
-        return new ReactPHPRequestAdapter(Factory::create());
+        return new ReactPHPRequestAdapter(Factory::create(), new ClientFactory());
     }
 }

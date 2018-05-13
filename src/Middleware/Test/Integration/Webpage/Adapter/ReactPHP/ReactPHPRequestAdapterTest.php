@@ -8,6 +8,7 @@
 
 namespace MSlwk\Otomoto\Middleware\Test\Integration\Webpage\Adapter\ReactPHP;
 
+use MSlwk\Otomoto\Middleware\Webpage\Adapter\ReactPHP\ClientFactory;
 use MSlwk\Otomoto\Middleware\Webpage\Adapter\ReactPHP\ReactPHPRequestAdapter;
 use MSlwk\Otomoto\Middleware\Webpage\Data\UrlDTO;
 use MSlwk\Otomoto\Middleware\Webpage\Data\UrlDTOArray;
@@ -32,7 +33,7 @@ class ReactPHPRequestAdapterTest extends TestCase
      */
     protected function setUp()
     {
-        $this->requestAdapter = new ReactPHPRequestAdapter(Factory::create());
+        $this->requestAdapter = new ReactPHPRequestAdapter(Factory::create(), new ClientFactory());
     }
 
     /**

@@ -25,8 +25,8 @@ class ListModelsCommand extends Command
     const COMMAND_NAME = 'app:manufacturer-models';
     const COMMAND_DESC = 'List all available models for a manufacturer';
 
-    const MANUFACTURER_OPTION_NAME = 'manufacturer';
-    const MANUFACTURER_OPTION_DESC = 'Full manufacturer name';
+    const MANUFACTURER_ARG_NAME = 'manufacturer';
+    const MANUFACTURER_ARG_DESC = 'Full manufacturer name';
 
     /**
      * @var ModelFactory
@@ -52,9 +52,9 @@ class ListModelsCommand extends Command
         $this->setName(self::COMMAND_NAME)
             ->setDescription(self::COMMAND_DESC)
             ->addArgument(
-                self::MANUFACTURER_OPTION_NAME,
+                self::MANUFACTURER_ARG_NAME,
                 InputArgument::REQUIRED,
-                self::MANUFACTURER_OPTION_DESC
+                self::MANUFACTURER_ARG_DESC
             );
 
         parent::configure();
@@ -67,7 +67,7 @@ class ListModelsCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $manufacturer = new ManufacturerDTO($input->getArgument(self::MANUFACTURER_OPTION_NAME));
+        $manufacturer = new ManufacturerDTO($input->getArgument(self::MANUFACTURER_ARG_NAME));
         $modelMiddleware = $this->modelMiddlewareFactory->create();
         $models = $modelMiddleware->getModels($manufacturer);
 

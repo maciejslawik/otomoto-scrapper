@@ -31,13 +31,21 @@ class ReactPHPRequestAdapter implements GETHandlerInterface
     private $loop;
 
     /**
+     * @var ClientFactory
+     */
+    private $clientFactory;
+
+    /**
      * ReactPHPRequestAdapter constructor.
      * @param LoopInterface $loop
+     * @param ClientFactory $clientFactory
      */
     public function __construct(
-        LoopInterface $loop
+        LoopInterface $loop,
+        ClientFactory $clientFactory
     ) {
         $this->loop = $loop;
+        $this->clientFactory = $clientFactory;
     }
 
     /**
@@ -48,7 +56,7 @@ class ReactPHPRequestAdapter implements GETHandlerInterface
     {
         $webpageDTOArray = new WebpageDTOArray();
         foreach ($urlDTOArray as $urlDTO) {
-            $client = new Client($this->loop);
+            $client = $this->clientFactory->create($this->loop);
             $request = $client->request('GET', $urlDTO->getUrl());
             $request->on('response', function (Response $response) use (&$webpageDTOArray) {
                 $data = '';

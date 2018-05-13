@@ -21,7 +21,7 @@ use MSlwk\Otomoto\Middleware\Webpage\Data\WebpageDTOArray;
 use MSlwk\Otomoto\Middleware\Webpage\Factory\ReactPHP\ReactPHPAdapterFactory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use MSlwk\Otomoto\App\Model\Url\ManufacturerUrlSuffixProvider;
+use MSlwk\Otomoto\App\Manufacturer\Url\ManufacturerUrlSuffixProvider;
 
 /**
  * Class ModelProviderTest

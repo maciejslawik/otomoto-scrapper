@@ -54,6 +54,18 @@ bin/otomoto
     bin/otomoto app:manufacturer-models "Alfa Romeo"
     ```
     
+    
+* app:model-details manufacturer_name model_name - retrieves stats for a chosen car model
+    ```
+    bin/otomoto app:model-details "Alfa Romeo" "Giulia"
+    ```
+    Available filters:
+    * From year of production
+    * To year of production
+    ```
+    bin/otomoto app:model-details "Alfa Romeo" "Giulia" --from=2016 --to=2017
+    ```
+    
 ### Caching
 Models and manufacturers are cached inside ```cache/``` directory. To clear cache
 simply remove/empty the directory.    
@@ -72,3 +84,9 @@ simply remove/empty the directory.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Screenshots
+
+![Alt text](docs/models.png?raw=true "Manufacturer models")
+
+![Alt text](docs/details.png?raw=true "Model stats")
