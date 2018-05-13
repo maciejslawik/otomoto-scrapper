@@ -30,7 +30,7 @@ class ModelHtmlScrapperTest extends TestCase
         $models = $scrapper->scrapModels($html);
         $expectedType = ModelDTOArray::class;
         $expectedCount = 19;
-        $expectedNameOfFirstItem = 'Stelvio';
+        $expectedNameOfFirstItem = '145';
 
         $this->assertInstanceOf($expectedType, $models);
         $this->assertEquals($expectedCount, $models->count());

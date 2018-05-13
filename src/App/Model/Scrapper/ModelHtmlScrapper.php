@@ -19,8 +19,9 @@ use Symfony\Component\DomCrawler\Crawler;
  */
 class ModelHtmlScrapper implements ModelHtmlScrapperInterface
 {
-    const MODEL_GROUP_ELEMENT_SELECTOR = 'div#topLinkShowAllList';
-    const MODEL_SINGLE_ELEMENT_SELECTOR = 'a.topLink';
+    const HTML_MODEL_DATA_NODE_SELECTOR = 'section#body-container';
+    const HTML_MODEL_DATA_NODE_ATTRIBUTE = 'data-facets';
+    const MODEL_DATA_JSON_KEY = 'filter_enum_model';
 
     /**
      * @param string $html
@@ -32,43 +33,25 @@ class ModelHtmlScrapper implements ModelHtmlScrapperInterface
 
         $modelOptions = $this->getModelsElements($html);
 
-        $modelOptions->each(function (Crawler $crawler) use (&$modelDTOArray) {
-            $optionNode = $crawler->getNode(0);
-            if ($optionNode->getAttribute('title')) {
-                $modelDTO = new ModelDTO($optionNode->getAttribute('title'));
-                $modelDTOArray->add($modelDTO);
-            }
-        });
+        foreach ($modelOptions as $model => $numberOfOffers) {
+            $modelDTO = new ModelDTO($model);
+            $modelDTOArray->add($modelDTO);
+        }
 
         return $modelDTOArray;
     }
 
     /**
      * @param string $html
-     * @return Crawler
+     * @return array
      */
-    private function getModelsElements(string $html): Crawler
+    private function getModelsElements(string $html): array
     {
         $crawler = new Crawler($html);
 
-        $modelList = $crawler->filter($this->getModelGroupCssSelector())->first();
-        $modelListElements = $modelList->filter($this->getModelSingleCssSelector());
-        return $modelListElements;
-    }
-
-    /**
-     * @return string
-     */
-    private function getModelGroupCssSelector(): string
-    {
-        return self::MODEL_GROUP_ELEMENT_SELECTOR;
-    }
-
-    /**
-     * @return string
-     */
-    private function getModelSingleCssSelector(): string
-    {
-        return self::MODEL_SINGLE_ELEMENT_SELECTOR;
+        $modelListNode = $crawler->filter(self::HTML_MODEL_DATA_NODE_SELECTOR)->getNode(0);
+        $jsonData = $modelListNode->getAttribute(self::HTML_MODEL_DATA_NODE_ATTRIBUTE);
+        $encodedData = json_decode($jsonData, true);
+        return $encodedData[self::MODEL_DATA_JSON_KEY];
     }
 }
