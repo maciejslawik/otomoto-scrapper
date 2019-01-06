@@ -115,6 +115,10 @@ class ManufacturerProviderTest extends TestCase
             ->method('scrapManufacturers')
             ->will($this->returnValue($manufacturerDTOArray));
 
+        $this->manufacturersScrappedValidator->expects($this->once())
+            ->method('validate')
+            ->with($manufacturerDTOArray);
+
         /** @var ManufacturerDTOArray $returnedManufacturers */
         $returnedManufacturers = $this->manufacturerProvider->getManufacturers();
 

@@ -4,3 +4,5 @@ cache
 coverage
 build/
 .env
+infection.log
+infection.json

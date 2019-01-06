@@ -131,6 +131,10 @@ class ModelProviderTest extends TestCase
             ->method('scrapModels')
             ->will($this->returnValue($modelDTOArray));
 
+        $this->modelsScrappedValidator->expects($this->once())
+            ->method('validate')
+            ->with($modelDTOArray);
+
         /** @var ModelDTOArray $returnedModels */
         $returnedModels = $this->modelProvider->getModels($manufacturer);
 

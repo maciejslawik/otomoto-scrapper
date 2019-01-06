@@ -43,6 +43,10 @@ class ToYearFilterTest extends TestCase
      */
     public function testSetGetValue()
     {
+        $this->validator->expects($this->exactly(2))
+            ->method('validate')
+            ->withConsecutive(['2015'], ['2017']);
+
         $filter = new ToYearFilter($this->validator, '2015');
 
         $this->assertEquals('2015', $filter->getValue());
