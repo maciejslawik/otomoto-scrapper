@@ -48,7 +48,7 @@ class ManufacturerHtmlScrapper implements ManufacturerHtmlScrapperInterface
     {
         $crawler = new Crawler($html);
         $manufacturerSelectField = $crawler->filter($this->getManufacturerSelectCssSelector())->first();
-        $manufacturerSelectOptions = $manufacturerSelectField->children();
+        $manufacturerSelectOptions = $manufacturerSelectField->filter('option');
         return $manufacturerSelectOptions;
     }
 
